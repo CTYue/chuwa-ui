@@ -1,0 +1,41 @@
+table{
+    text-align: center;
+}
+
+.form {
+    padding: 40px;
+    max-width:600px;
+    margin:40px auto;
+  }
+/* general rules for all buttons*/
+button {
+    cursor: pointer;
+}
+/* set styles for the register button*/
+.register{
+    background-color:rgb(18, 124, 190);
+    color: white;
+    font-size: large;
+}
+/* set styles for the signin button*/
+.signin{
+    background-color:rgb(34, 145, 34);
+    color: white;
+    font-size: large;
+}
+
+.mobileNumber{
+    width: 100%;
+}
+
+#registertxt{
+    background-color: rgb(44, 105, 143);
+    padding: 4px;
+    color: white;
+
+}
+
+a {
+    color: lightskyblue;
+    text-decoration: none;
+}
