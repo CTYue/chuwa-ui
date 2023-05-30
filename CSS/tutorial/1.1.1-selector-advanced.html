@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 */
+        /* 找到 div 标签中的 p 标签，设置文字颜色为红色 */
+        div p {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 后代包括：儿子、孙子、重孙子…… -->
+    <p>这是一个 p 标签</p>
+    <div>
+        <p>这是 div 中的 p 标签</p>
+    </div>
+</body>
+
+</html>
