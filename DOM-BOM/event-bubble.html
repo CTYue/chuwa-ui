@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        .father {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .son {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="father">
+        我是父亲
+        <div class="son">我是儿子</div>
+    </div>
+
+    <script>
+        
+        /*
+            点击儿子，依次会执行 儿子、父亲、爷爷的点击事件。
+        */
+        
+        let son = document.querySelector('.son');
+        let father = document.querySelector('.father');
+
+        son.addEventListener('click', function () {
+            alert('儿子');
+        });
+
+        father.addEventListener('click', function () {
+            alert('父亲');
+        });
+
+        document.addEventListener('click', function () {
+            alert('爷爷');
+        });
+    </script>
+
+</body>
+</html>

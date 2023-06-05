@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+    <style>
+        li {
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>我是孩子1</li>
+        <li>我是孩子2</li>
+        <li>我是孩子3</li>
+        <li>我是孩子4</li>
+        <li>我是孩子5</li>
+    </ul>
+
+    <button>点我</button>
+
+    <script>
+        let btn = document.querySelector('button');
+
+        btn.addEventListener('click', function () {
+            let ul = document.querySelector('ul');
+            let lis = ul.children;
+            for (let i = 0; i < lis.length; i++) {
+                let li = lis[i];
+                console.log(li.innerHTML);
+                li.style.backgroundColor = 'pink';
+            }
+        });
+        
+    </script>
+
+</body>
+</html>

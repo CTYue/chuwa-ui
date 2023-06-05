@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议用户协议</div>
+    <button class="btn">我已经阅读用户协议(6)</button>
+
+    <script>
+        let btn = document.querySelector('button');
+        // 刚开始的时候，将按钮禁止
+        btn.disabled = true;
+        // 定义变量，用来计数
+        let times = 6;
+        // 开启定时器
+        let timer = setInterval(() => {
+            if (times === 0) {
+                clearInterval(timer);
+                btn.innerHTML = '我同意该协议';
+                btn.disabled = false;
+            } else {
+                btn.innerText = `我已经阅读用户协议(${times--})`;
+            }
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
