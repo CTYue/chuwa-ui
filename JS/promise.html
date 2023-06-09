@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        /*
+        * 改变 Promise 实例的状态和指定回调函数谁先谁后？
+        * ① 都有可能，正常情况下是先指定回调再改变状态，但是也可以先改变状态再指定回调。
+        * ② 如何先改状态再指定回调？只需要延迟一会再调用 then() 方法。
+        * ③ Promise 实例什么时候能得到数据？
+        *   如果先指定的回调，那么当状态发生改变的时候，回调函数就会调用，得到数据。
+        *   如果先改变的状态，那么当指定回调的时候，回调函数就会调用，得到数据。
+        */
+        // 正常情况下是先指定回调再改变状态
+        const p = new Promise((resolve, reject) => {
+            // 函数体
+            setTimeout(() => {
+                // case1: resolve
+                // case2: reject
+                // case3: resolve + reject
+                // case4: reject + resolve
+                
+                resolve(11);
+                reject("培训太久了，疲惫了，not feel well");
+            }, 1000);
+        });
+        p.then(value => {
+            // 函数体
+            console.log('成功了', value);
+        }, reason => {
+            // 函数体
+            console.log('失败了', reason);
+        });
+    </script>
+</body>
+</html>

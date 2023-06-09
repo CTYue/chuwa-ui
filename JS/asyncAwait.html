@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const p1 = new Promise((resolve, reject) => {
+            // 函数体
+            setTimeout(() => {
+                resolve(1);
+            }, 1000);
+        });
+
+        const p2 = new Promise((resolve, reject) => {
+            // 函数体
+            setTimeout(() => {
+                resolve(2);
+            }, 2000);
+        });
+
+        const p3 = new Promise((resolve, reject) => {
+            // 函数体
+            setTimeout(() => {
+                resolve(3);
+            }, 3000);
+        });
+
+        // 可以使用立即执行函数简化，这种方式和 Promise 实例对象的 then 方法执行的结果是一样的。
+        ;(async () => {
+            try {
+                const result1 = await p1;
+                console.log(result1);
+                const result2 = await p2;
+                console.log(result2);
+                const result3 = await p3;
+                console.log(result3);
+            } catch (e) {
+                console.error(e);
+            }
+        })();
+
+        console.log("done");
+    </script>
+</body>
+</html>
